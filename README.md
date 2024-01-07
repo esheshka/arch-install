@@ -136,7 +136,6 @@ passwd esheshka
 sudo pacman -S networkmanager
 systemctl enable NetworkManager
 ```
-(Возможно после каждой команды надо ставить точку)
 
 
 ## 13. Графическая оболочка (i3)
@@ -188,5 +187,6 @@ pulseaudio -D
 
 
 ## Остальное
+yay rtw88
 yay -S xkb-switch-git
 bindsym $mod+space exec "setxkbmap -query | grep -q 'us' && setxkbmap ru || setxkbmap us,ru"
