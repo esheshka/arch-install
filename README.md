@@ -100,6 +100,82 @@ echo esheshka > /etc/hostname
 ```
 
 
+## 10. Установка Grub
+
+```
+pacman -S grub efibootmgr
+mkdir /boot/efi
+mount /dev/sda1 /boot/efi
+grub-install --target=x86_64-efi --bootloader-id=GRUB --efi-directory=/boot/efi
+grub-mkconfig -o /boot/grub/grub.cfg
+```
+
+
+## 11. Создание пользователя
+
+```
+pacman -S sudo
+useradd -m esheshka
+usermod -aG wheel,audio,video,storage esheshka
+passwd
+passwd esheshka
+```
+
+Пишем `EDITOR=nvim visudo` и раскомментируем строки
+```
+%wheel ALL=(ALL:ALL) ALL
+%sudo ALL=(ALL:ALL) ALL
+```
+
+
+## 12. использование Wi-Fi
+
+```
+pacman -S networkmanager
+systemctl enable NetworkManager
+```
+(Возможно после каждой команды надо ставить точку)
+
+
+## 13. Графическая оболочка (i3)
+
+```
+pacman -S xorg-server xorg-xinit i3-wm i3blocks i3status
+echo exec i3 > /home/esheshka/.xinitrc
+pacman -S ttf-droid
+```
+
+В файле `~/.config/i3/config` изменяем строчку `font pango:` на `font pango: Droid Fonts 10`
+
+
+## 14. Yay
+
+```
+pacman -S base-devel git
+cd /opt
+git clone https://aur.archlinux.org/yay.git
+chown -R esheshka:users ./yay
+cd yay
+makepkg -si
+cd /
+```
+
+
+## 15. Терминал
+
+```
+yay -S alacritty
+```
+
+
+## 16. Звук
+
+В файле `/etc/pacman.conf` раскомментировать `Include = /etc/pacman.d/mirrorlist` (multilib)
+
+```
+sudo pacman -S pulseaudio pavucontrol
+pulseaudio -D
+```
 
 
 
