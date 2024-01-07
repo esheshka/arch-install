@@ -127,11 +127,13 @@ passwd esheshka
 %sudo ALL=(ALL:ALL) ALL
 ```
 
+Перезаходим, используя созданный аккаунт
+
 
 ## 12. использование Wi-Fi
 
 ```
-pacman -S networkmanager
+sudo pacman -S networkmanager
 systemctl enable NetworkManager
 ```
 (Возможно после каждой команды надо ставить точку)
@@ -140,9 +142,9 @@ systemctl enable NetworkManager
 ## 13. Графическая оболочка (i3)
 
 ```
-pacman -S xorg-server xorg-xinit i3-wm i3blocks i3status
+sudo pacman -S xorg-server xorg-xinit i3-wm i3blocks i3status
 echo exec i3 > /home/esheshka/.xinitrc
-pacman -S ttf-droid
+sudo pacman -S ttf-droid
 ```
 
 В файле `~/.config/i3/config` изменяем строчку `font pango:` на `font pango: Droid Fonts 10`
@@ -151,10 +153,10 @@ pacman -S ttf-droid
 ## 14. Yay
 
 ```
-pacman -S base-devel git
+sudo pacman -S base-devel git
 cd /opt
-git clone https://aur.archlinux.org/yay.git
-chown -R esheshka:users ./yay
+sudo git clone https://aur.archlinux.org/yay.git
+sudo chown -R esheshka:users ./yay
 cd yay
 makepkg -si
 cd /
