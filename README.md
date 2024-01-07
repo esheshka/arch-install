@@ -133,9 +133,11 @@ passwd esheshka
 ## 12. использование Wi-Fi
 
 ```
-sudo pacman -S networkmanager
+yay -S networkmanager network-manager-applet
 systemctl enable NetworkManager
+nm-applet
 ```
+В файл `~/.xinitrc` добавить `nm-applet`
 
 
 ## 13. Графическая оболочка (i3)
