@@ -189,6 +189,6 @@ pulseaudio -D
 
 
 ## Остальное
-yay rtw88
+yay rtw88 rtl8821ce-dkms-git
 yay -S xkb-switch-git
 bindsym $mod+space exec "setxkbmap -query | grep -q 'us' && setxkbmap ru || setxkbmap us,ru"
