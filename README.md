@@ -133,7 +133,7 @@ passwd esheshka
 ## 12. использование Wi-Fi
 
 ```
-yay -S networkmanager network-manager-applet
+yay -S networkmanager network-manager-applet rtw88 rtl8821ce-dkms-git
 systemctl enable NetworkManager
 nm-applet
 ```
@@ -189,6 +189,6 @@ pulseaudio -D
 
 
 ## Остальное
-yay rtw88 rtl8821ce-dkms-git
+
 yay -S xkb-switch-git
 bindsym $mod+space exec "setxkbmap -query | grep -q 'us' && setxkbmap ru || setxkbmap us,ru"
