@@ -189,6 +189,14 @@ yay -S setxkbmap
 `setxkbmap -option caps:swapescape` to `~/.xinitrc`
 
 
+# Остальное
+
+## 1. Dmenu
+
+```
+yay -S dmenu2
+```
+
 
 
 
