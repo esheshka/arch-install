@@ -181,6 +181,14 @@ pulseaudio -D
 ```
 
 
+## 17. Caps to escape
+
+```
+yay -S setxkbmap
+```
+`setxkbmap -option caps:swapescape` to `~/.xinitrc`
+
+
 
 
 
